@@ -1,7 +1,8 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '1.0.21'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.148'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -18,6 +19,22 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        name = "Modmaven"
+        url = uri("https://modmaven.dev/")
+        content {
+            includeGroup("appeng")
+            includeGroup("de.mari_023")
+        }
+    }
+    maven {
+        name 'LDTTeam - Modding'
+        url 'https://ldtteam.jfrog.io/ldtteam/modding/'
+    }
+    maven {
+        name 'Curse Maven'
+        url "https://cursemaven.com"
+    }
 }
 
 base {
@@ -53,6 +70,11 @@ neoForge {
             server()
             programArgument '--nogui'
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        gametestWorld {
+            client()
+            programArguments.addAll("--username", "AppliedDev", "--quickPlaySingleplayer", "GametestWorld")
         }
 
         // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -133,6 +155,21 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    implementation "org.appliedenergistics:appliedenergistics2:19.2.18"
+
+    implementation "com.ldtteam:minecolonies:1.1.1403-1.21.1"
+
+    implementation "de.mari_023:ae2wtlib_api:19.5.1"
+    runtimeOnly "de.mari_023:ae2wtlib:19.5.1"
+
+    implementation "org.appliedenergistics:guideme:2.6.0"
+    implementation "com.ldtteam:structurize:1.0.832-1.21.1-snapshot"
+    implementation "com.ldtteam:domum-ornamentum:1.0.223-snapshot"
+
+    runtimeOnly "curse.maven:multipiston-303278:7097877"
+    implementation "com.ldtteam:blockui:1.0.199-1.21.1-snapshot"
+    runtimeOnly "curse.maven:emi-580555:8081408"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

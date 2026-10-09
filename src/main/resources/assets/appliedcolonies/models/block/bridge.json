@@ -1,0 +1,97 @@
+{
+  "parent": "block/block",
+  "ambientocclusion": true,
+  "textures": {
+    "particle": "appliedcolonies:block/pedestal_side",
+    "base": "appliedcolonies:block/pedestal_base",
+    "side": "appliedcolonies:block/pedestal_side",
+    "cap": "appliedcolonies:block/pedestal_cap"
+  },
+  "elements": [
+    {
+      "__comment": "stone base trim (14 x 2 x 14, flush with floor)",
+      "from": [1, 0, 1],
+      "to": [15, 2, 15],
+      "faces": {
+        "down":  {"uv": [1, 1, 15, 15], "texture": "#base", "cullface": "down"},
+        "up":    {"uv": [1, 1, 15, 15], "texture": "#base"},
+        "north": {"uv": [1, 14, 15, 16], "texture": "#base"},
+        "south": {"uv": [1, 14, 15, 16], "texture": "#base"},
+        "west":  {"uv": [1, 14, 15, 16], "texture": "#base"},
+        "east":  {"uv": [1, 14, 15, 16], "texture": "#base"}
+      }
+    },
+    {
+      "__comment": "pedestal shaft (12 x 8 x 12)",
+      "from": [2, 2, 2],
+      "to": [14, 10, 14],
+      "faces": {
+        "up":    {"uv": [2, 2, 14, 14], "texture": "#side"},
+        "north": {"uv": [2, 6, 14, 14], "texture": "#side"},
+        "south": {"uv": [2, 6, 14, 14], "texture": "#side"},
+        "west":  {"uv": [2, 6, 14, 14], "texture": "#side"},
+        "east":  {"uv": [2, 6, 14, 14], "texture": "#side"}
+      }
+    },
+    {
+      "__comment": "top platform / cap (10 x 2 x 10) with runic inlay on top",
+      "from": [3, 10, 3],
+      "to": [13, 12, 13],
+      "faces": {
+        "up":    {"uv": [3, 3, 13, 13], "texture": "#cap"},
+        "north": {"uv": [3, 4, 13, 6], "texture": "#cap"},
+        "south": {"uv": [3, 4, 13, 6], "texture": "#cap"},
+        "west":  {"uv": [3, 4, 13, 6], "texture": "#cap"},
+        "east":  {"uv": [3, 4, 13, 6], "texture": "#cap"}
+      }
+    },
+    {
+      "__comment": "north cable connector (4x4x2) at mid-shaft, bridges shaft wall (z=2) to block edge (z=0)",
+      "from": [6, 6, 0],
+      "to":   [10, 10, 2],
+      "faces": {
+        "north": {"uv": [6, 7, 10, 11], "texture": "#cap", "cullface": "north"},
+        "up":    {"uv": [6, 0, 10, 2],  "texture": "#side"},
+        "down":  {"uv": [6, 0, 10, 2],  "texture": "#side"},
+        "east":  {"uv": [0, 7, 2, 11],  "texture": "#side"},
+        "west":  {"uv": [14, 7, 16, 11],"texture": "#side"}
+      }
+    },
+    {
+      "__comment": "south cable connector",
+      "from": [6, 6, 14],
+      "to":   [10, 10, 16],
+      "faces": {
+        "south": {"uv": [6, 7, 10, 11], "texture": "#cap", "cullface": "south"},
+        "up":    {"uv": [6, 14, 10, 16], "texture": "#side"},
+        "down":  {"uv": [6, 14, 10, 16], "texture": "#side"},
+        "east":  {"uv": [14, 7, 16, 11], "texture": "#side"},
+        "west":  {"uv": [0, 7, 2, 11],   "texture": "#side"}
+      }
+    },
+    {
+      "__comment": "west cable connector",
+      "from": [0, 6, 6],
+      "to":   [2, 10, 10],
+      "faces": {
+        "west":  {"uv": [6, 7, 10, 11], "texture": "#cap", "cullface": "west"},
+        "up":    {"uv": [0, 6, 2, 10],  "texture": "#side"},
+        "down":  {"uv": [0, 6, 2, 10],  "texture": "#side"},
+        "north": {"uv": [14, 7, 16, 11],"texture": "#side"},
+        "south": {"uv": [0, 7, 2, 11],  "texture": "#side"}
+      }
+    },
+    {
+      "__comment": "east cable connector",
+      "from": [14, 6, 6],
+      "to":   [16, 10, 10],
+      "faces": {
+        "east":  {"uv": [6, 7, 10, 11], "texture": "#cap", "cullface": "east"},
+        "up":    {"uv": [14, 6, 16, 10],"texture": "#side"},
+        "down":  {"uv": [14, 6, 16, 10],"texture": "#side"},
+        "north": {"uv": [0, 7, 2, 11],  "texture": "#side"},
+        "south": {"uv": [14, 7, 16, 11],"texture": "#side"}
+      }
+    }
+  ]
+}

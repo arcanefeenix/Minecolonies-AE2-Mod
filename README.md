@@ -1,25 +1,54 @@
+# Applied Colonies
 
-Installation information
-=======
+Integration mod for **Applied Energistics 2** and **Minecolonies**. Your colonists request items; your ME network delivers them.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Requirements
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+| Dependency | Version |
+| --- | --- |
+| Minecraft | 1.21.1 |
+| NeoForge | 21.1.256+ |
+| Applied Energistics 2 | 19.2.12+ (`<20`) |
+| Minecolonies | 1.1.1400+ |
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Installation
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Drop `appliedcolonies-1.0.0.jar` into your `mods/` folder alongside NeoForge, AE2, and Minecolonies. Required on both client and server.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## Usage
+
+1. Craft the Bridge: 4 stripped oak logs, 3 logic processors, 1 ME Interface, 1 Minecolonies Clipboard.
+2. Place it in your colony and connect it to your ME network.
+3. Optional: insert an AE2 Crafting Card in its upgrade slot to enable autocrafting.
+
+The Bridge watches for colonist item requests and fulfills them from your network — pulling existing items, or (with a card installed) kicking off AE2 autocrafts for items you don't have.
+
+## Delivery modes
+
+Controlled by `requireCourier` in `config/AppliedColonies/general.toml`:
+
+- **`true` (default)** — items land in the Bridge's rack and a courier delivers them via the warehouse. Requires a built Warehouse with a hired courier.
+- **`false`** — items are extracted from AE and inserted directly into the requester's building rack. No courier needed.
+
+## Configuration
+
+| Option | Default | Description |
+| --- | --- | --- |
+| `requireCourier` | `true` | See delivery modes above. |
+| `enableDebugMode` | `false` | Verbose debug logging. |
+
+## Building from source
+
+```bash
+./gradlew build
+```
+
+Requires JDK 21. Output jar lands in `build/libs/`.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+## Issues
+
+[github.com/arcanefeenix/Minecolonies-AE2-Mod/issues](https://github.com/arcanefeenix/Minecolonies-AE2-Mod/issues)

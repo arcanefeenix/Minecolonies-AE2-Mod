@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:stripped_oak_log"
+    },
+    "P": {
+      "item": "ae2:logic_processor"
+    },
+    "I": {
+      "item": "ae2:interface"
+    },
+    "C": {
+      "item": "minecolonies:clipboard"
+    }
+  },
+  "pattern": [
+    "LPL",
+    "PIP",
+    "LCL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "appliedcolonies:bridge"
+  }
+}

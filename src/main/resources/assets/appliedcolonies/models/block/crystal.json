@@ -1,0 +1,81 @@
+{
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "render_type": "cutout",
+  "textures": {
+    "particle": "ae2:block/quartz_block",
+    "crystal": "ae2:block/quartz_block"
+  },
+  "elements": [
+    {
+      "__comment": "bottom tip (2x2x2), rotated 45 around block centre",
+      "from": [7, 3, 7],
+      "to":   [9, 5, 9],
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [7, 11, 9, 13], "texture": "#crystal"},
+        "south": {"uv": [7, 11, 9, 13], "texture": "#crystal"},
+        "east":  {"uv": [7, 11, 9, 13], "texture": "#crystal"},
+        "west":  {"uv": [7, 11, 9, 13], "texture": "#crystal"},
+        "up":    {"uv": [7, 7, 9, 9],   "texture": "#crystal"},
+        "down":  {"uv": [7, 7, 9, 9],   "texture": "#crystal"}
+      }
+    },
+    {
+      "__comment": "lower taper (4x2x4) - up/down rings cap the step between the 2x2 and 6x6 layers",
+      "from": [6, 5, 6],
+      "to":   [10, 7, 10],
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [6, 9, 10, 11], "texture": "#crystal"},
+        "south": {"uv": [6, 9, 10, 11], "texture": "#crystal"},
+        "east":  {"uv": [6, 9, 10, 11], "texture": "#crystal"},
+        "west":  {"uv": [6, 9, 10, 11], "texture": "#crystal"},
+        "up":    {"uv": [6, 6, 10, 10], "texture": "#crystal"},
+        "down":  {"uv": [6, 6, 10, 10], "texture": "#crystal"}
+      }
+    },
+    {
+      "__comment": "middle band (6x2x6)",
+      "from": [5, 7, 5],
+      "to":   [11, 9, 11],
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [5, 7, 11, 9], "texture": "#crystal"},
+        "south": {"uv": [5, 7, 11, 9], "texture": "#crystal"},
+        "east":  {"uv": [5, 7, 11, 9], "texture": "#crystal"},
+        "west":  {"uv": [5, 7, 11, 9], "texture": "#crystal"},
+        "up":    {"uv": [5, 5, 11, 11], "texture": "#crystal"},
+        "down":  {"uv": [5, 5, 11, 11], "texture": "#crystal"}
+      }
+    },
+    {
+      "__comment": "upper taper (4x2x4)",
+      "from": [6, 9, 6],
+      "to":   [10, 11, 10],
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [6, 5, 10, 7], "texture": "#crystal"},
+        "south": {"uv": [6, 5, 10, 7], "texture": "#crystal"},
+        "east":  {"uv": [6, 5, 10, 7], "texture": "#crystal"},
+        "west":  {"uv": [6, 5, 10, 7], "texture": "#crystal"},
+        "up":    {"uv": [6, 6, 10, 10], "texture": "#crystal"},
+        "down":  {"uv": [6, 6, 10, 10], "texture": "#crystal"}
+      }
+    },
+    {
+      "__comment": "top tip (2x2x2)",
+      "from": [7, 11, 7],
+      "to":   [9, 13, 9],
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [7, 3, 9, 5], "texture": "#crystal"},
+        "south": {"uv": [7, 3, 9, 5], "texture": "#crystal"},
+        "east":  {"uv": [7, 3, 9, 5], "texture": "#crystal"},
+        "west":  {"uv": [7, 3, 9, 5], "texture": "#crystal"},
+        "up":    {"uv": [7, 7, 9, 9], "texture": "#crystal"},
+        "down":  {"uv": [7, 7, 9, 9], "texture": "#crystal"}
+      }
+    }
+  ]
+}
